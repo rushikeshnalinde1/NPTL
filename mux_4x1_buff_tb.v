@@ -1,0 +1,17 @@
+module mux_4x1_buff_tb;
+reg [3:0]i;
+reg [1:0]s;
+wire y;
+
+mux_4x1_buff dut(.y(y), .i(i), .s(s));
+initial begin 
+$monitor("time=%0t s=%b i=%b y=%b", $time, s,i,y);
+
+s=2'b00; i=4'b1110; #10;
+s=2'b01; i=4'b0000; #10;
+s=2'b10; i=4'b0110; #10;
+s=2'b11; i=4'b1011; #10;
+
+$stop;
+end
+endmodule

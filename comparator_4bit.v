@@ -1,0 +1,24 @@
+module comparator_4bit(output reg g, e, l, input [3:0]a, b);
+always @(*)
+begin 
+
+if(a>b)
+begin
+g=1'b1; e=1'b0; l=1'b0;
+end
+
+else if(a==b)
+begin
+g=1'b0; e=1'b1; l=1'b0;
+end
+
+else
+begin
+g=1'b0; e=1'b0; l=1'b1;
+end
+
+end
+endmodule
+
+
+
